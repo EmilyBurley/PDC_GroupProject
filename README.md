@@ -6,3 +6,7 @@ This is the group project for the Parallel and Distributed Computing class taugh
 ### Overview  
 
 The goal of this project is to perform parallelized and unparallelized matrix multiplication, and compare the performance of the two approaches.  
+
+### Files
+
+There are two program files: 
