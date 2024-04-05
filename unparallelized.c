@@ -57,10 +57,13 @@ int main() {
 
     clock_gettime(CLOCK_REALTIME, &start);
 
-    // perform the computation
+    // Perform matrix multiplication.
     for (trial = 0; trial < TRIALS; trial++) {
-        for (i = 0; i < N; i++) {
-            c[i] += a[i] + b[i];
+        for (int i = 0; i < ROWS; i++) {
+            for (int j = 0; j < COLUMNS; j++) {
+                // Code the computation here.
+                // Store the result in matrix3.
+            }
         }
     };
 
