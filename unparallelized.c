@@ -13,17 +13,46 @@ const int ROWS = 3;
 const int COLUMNS = 3;
 
 int main() {
+
     int trial, i;
     struct timespec start, stop;
 
-    // allocate and initialize memory
-    int *a, *b, *c;
-    a = (int*)malloc(N * sizeof(int));
-    b = (int*)malloc(N * sizeof(int));
-    c = (int*)malloc(N * sizeof(int));
-    for (i = 0; i < N; i++) {
-        a[i] = 1;
-        b[i] = 2;
+    // Allocate and initialize memory.
+    int **matrix1, **matrix2, **matrix3;
+
+    // Allocate and initialize rows memory.
+    matrix1 = (int**)malloc(ROWS * sizeof(int));
+    // Put an array in each row.
+    for (int i = 0; i < ROWS; i++) {
+        matrix1[i] = (int *)malloc(COLUMNS * sizeof(int));
+    }
+
+    // Allocate and initialize rows memory.
+    matrix2 = (int*)malloc(N * sizeof(int));
+    // Put an array in each row.
+    for (int i = 0; i < ROWS; i++) {
+        matrix2[i] = (int *)malloc(COLUMNS * sizeof(int));
+    }
+
+    // Allocate and initialize rows memory.
+    matrix3 = (int*)malloc(N * sizeof(int));
+    // Put an array in each row.
+    for (int i = 0; i < ROWS; i++) {
+        matrix3[i] = (int *)malloc(COLUMNS * sizeof(int));
+    }
+
+    // Fill matrix1 with the number 7.
+    for (int i = 0; i < ROWS; i++) {
+        for (int j = 0; j < COLUMNS; j++) {
+            matrix1[i][j] = 7;
+        }
+    }
+
+    // Fill matrix2 with the number 8.
+    for (int i = 0; i < ROWS; i++) {
+        for (int j = 0; j < COLUMNS; j++) {
+            matrix2[i][j] = 8;
+        }
     }
 
     clock_gettime(CLOCK_REALTIME, &start);
