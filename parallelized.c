@@ -2,7 +2,11 @@
 
 // Start our program.
 
+#include <stdlib.h>
+#include <stdio.h>
 
+const int TRIALS = 1;
+const int N = 100;
 
 // End our program.
 
