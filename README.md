@@ -1,6 +1,8 @@
 # Group Project  
 ###### By Emily Burley, Xia Chen, Christina Marogi, Jessalyn Hilliard-Steed  
 
+### Project Context  
+
 This is the group project for the Parallel and Distributed Computing class taught by Dr. Debnath at Oakland University.
 
 ### Overview  
