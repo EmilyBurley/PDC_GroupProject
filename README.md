@@ -15,4 +15,4 @@ There are two program files: "unparallelized.c" and "parallelized.cu". Both file
 
 ### Computation  
 
-Both files perform matrix multiplication. The file "unparallelized.c" performs unparallelized matrix multiplication, and the file "parallelized.cu" performs parallelized maatrix multiplication.  
+Both files perform matrix multiplication. The file "unparallelized.c" performs unparallelized matrix multiplication, and the file "parallelized.cu" performs parallelized matrix multiplication.  
