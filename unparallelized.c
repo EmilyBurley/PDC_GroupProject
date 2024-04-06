@@ -7,7 +7,7 @@
 #include <time.h>
 
 const int TRIALS = 1;
-const int N = 100;
+//const int N = 100;
 
 const int ROWS = 3;
 const int COLUMNS = 3;
