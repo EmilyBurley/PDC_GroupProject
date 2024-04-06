@@ -28,14 +28,14 @@ int main() {
     }
 
     // Allocate and initialize rows memory.
-    matrix2 = (int*)malloc(N * sizeof(int));
+    matrix2 = (int**)malloc(N * sizeof(int));
     // Put an array in each row.
     for (int i = 0; i < ROWS; i++) {
         matrix2[i] = (int *)malloc(COLUMNS * sizeof(int));
     }
 
     // Allocate and initialize rows memory.
-    matrix3 = (int*)malloc(N * sizeof(int));
+    matrix3 = (int**)malloc(N * sizeof(int));
     // Put an array in each row.
     for (int i = 0; i < ROWS; i++) {
         matrix3[i] = (int *)malloc(COLUMNS * sizeof(int));
@@ -62,10 +62,16 @@ int main() {
         for (int i = 0; i < ROWS; i++) {
             for (int j = 0; j < COLUMNS; j++) {
                 // Code the computation here.
-                // Store the result in matrix3.
+                matrix3[i][j]=0;
+                for(int x = 0; x < COLUMNS; x++)
+                {
+                    // Store the result in matrix3.
+                    matrix3[i][j] += matrix1[i][x]*matrix2[x][j];
+                }
+                
             }
         }
-    };
+    }; 
 
     clock_gettime(CLOCK_REALTIME, &stop);
 
@@ -73,7 +79,7 @@ int main() {
     double milliseconds = (stop.tv_sec - start.tv_sec) * 1e3 +
     (stop.tv_nsec - start.tv_nsec) / 1e6;
 
-    for (i = 0; i < N; i++) printf("%d ", c[i]);
+    for (i = 0; i < N; i++) printf("%d ", matrix3[i]);
     printf("\n");
     printf("Serial duration: %3.6fms\n", milliseconds);
 }
