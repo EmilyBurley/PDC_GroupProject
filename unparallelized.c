@@ -83,7 +83,7 @@ int main() {
     {
         for (int j = 0; j < COLUMNS; j++)
         {
-            printf("%d ", matrix3[i]);
+            printf("%d ", matrix3[i][j]);
         }
         
         printf("\n");
