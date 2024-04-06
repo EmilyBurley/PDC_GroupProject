@@ -21,21 +21,21 @@ int main() {
     int **matrix1, **matrix2, **matrix3;
 
     // Allocate and initialize rows memory.
-    matrix1 = (int**)malloc(ROWS * sizeof(int));
+    matrix1 = (int**)malloc(ROWS * sizeof(int*));
     // Put an array in each row.
     for (int i = 0; i < ROWS; i++) {
         matrix1[i] = (int *)malloc(COLUMNS * sizeof(int));
     }
 
     // Allocate and initialize rows memory.
-    matrix2 = (int**)malloc(N * sizeof(int));
+    matrix2 = (int**)malloc(ROWS * sizeof(int*));
     // Put an array in each row.
     for (int i = 0; i < ROWS; i++) {
         matrix2[i] = (int *)malloc(COLUMNS * sizeof(int));
     }
 
     // Allocate and initialize rows memory.
-    matrix3 = (int**)malloc(N * sizeof(int));
+    matrix3 = (int**)malloc(ROWS * sizeof(int*));
     // Put an array in each row.
     for (int i = 0; i < ROWS; i++) {
         matrix3[i] = (int *)malloc(COLUMNS * sizeof(int));
@@ -79,8 +79,17 @@ int main() {
     double milliseconds = (stop.tv_sec - start.tv_sec) * 1e3 +
     (stop.tv_nsec - start.tv_nsec) / 1e6;
 
-    for (i = 0; i < N; i++) printf("%d ", matrix3[i]);
-    printf("\n");
+    for (i = 0; i < ROWS; i++) 
+    {
+        for (int j = 0; j < COLUMNS; j++)
+        {
+            printf("%d ", matrix3[i]);
+        }
+        
+        printf("\n");
+    }
+
+    
     printf("Serial duration: %3.6fms\n", milliseconds);
 }
 
