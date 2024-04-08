@@ -19,12 +19,15 @@ const int TRIALS = 1;
 const int ROWS = 100;
 const int COLUMNS = 100;
 
+const int MATRIX_1_NUMBER;
+const int MATRIX_2_NUMBER;
+
 int main() {
 
     int trial, i;
     struct timespec start, stop;
 
-    // Allocate and initialize memory.
+    // Allocate and initialize memory for the matrices.
     int **matrix1, **matrix2, **matrix3;
 
     // Allocate and initialize rows memory.
@@ -51,14 +54,14 @@ int main() {
     // Fill matrix1 with the number 7.
     for (int i = 0; i < ROWS; i++) {
         for (int j = 0; j < COLUMNS; j++) {
-            matrix1[i][j] = 7;
+            matrix1[i][j] = MATRIX_1_NUMBER;
         }
     }
 
     // Fill matrix2 with the number 8.
     for (int i = 0; i < ROWS; i++) {
         for (int j = 0; j < COLUMNS; j++) {
-            matrix2[i][j] = 8;
+            matrix2[i][j] = MATRIX_2_NUMBER;
         }
     }
 
