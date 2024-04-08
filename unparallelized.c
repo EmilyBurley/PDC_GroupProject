@@ -16,8 +16,8 @@ const int TRIALS = 1;
 //const int N = 100;
 
 // The number of rows and columns in the matrices.
-const int ROWS = 100;
-const int COLUMNS = 100;
+const int ROWS = 500;
+const int COLUMNS = 500;
 
 // Choose a number to fill the first matrix.
 const int MATRIX_1_NUMBER = 7;
