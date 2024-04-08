@@ -81,8 +81,11 @@ int main() {
     // Perform matrix multiplication.
     // For each trial...
     for (int trial = 0; trial < TRIALS; trial++) {
+        // ... and for each row of matrix3...
         for (int i = 0; i < M3_ROWS; i++) {
+            // ... and for each column of matrix3...
             for (int j = 0; j < M3_COLUMNS; j++) {
+                // ... iterate through matrix1's row and matrix2's column.
                 for(int x = 0; x < M1_COLUMNS_M2_ROWS; x++) {
                     // Compute the result.
                     // Store the result in matrix3.
