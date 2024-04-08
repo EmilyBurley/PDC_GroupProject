@@ -25,6 +25,9 @@ const int MATRIX_2_NUMBER;
 int main() {
 
     int trial, i;
+
+    // These will be used to quantify the amount of time
+    // the program took to run.
     struct timespec start, stop;
 
     // Allocate and initialize memory for the matrices.
@@ -65,6 +68,7 @@ int main() {
         }
     }
 
+    // Record the time the computation started.
     clock_gettime(CLOCK_REALTIME, &start);
 
     // Perform matrix multiplication.
@@ -80,6 +84,7 @@ int main() {
         }
     };
 
+    // Record the time the computation finished.
     clock_gettime(CLOCK_REALTIME, &stop);
 
     // Record execution time as the difference of event timestamps.
@@ -88,7 +93,6 @@ int main() {
 
     /*
     // This part is commented out because it becomes impractical for large matrices.
-    // Also, it takes additional computation time.
 
     // Print the result to check its accuracy.
     for (i = 0; i < ROWS; i++) {
