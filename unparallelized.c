@@ -9,8 +9,8 @@
 const int TRIALS = 1;
 //const int N = 100;
 
-const int ROWS = 3;
-const int COLUMNS = 3;
+const int ROWS = 100;
+const int COLUMNS = 100;
 
 int main() {
 
@@ -71,7 +71,7 @@ int main() {
                 
             }
         }
-    }; 
+    };
 
     clock_gettime(CLOCK_REALTIME, &stop);
 
@@ -79,17 +79,22 @@ int main() {
     double milliseconds = (stop.tv_sec - start.tv_sec) * 1e3 +
     (stop.tv_nsec - start.tv_nsec) / 1e6;
 
-    for (i = 0; i < ROWS; i++) 
-    {
-        for (int j = 0; j < COLUMNS; j++)
-        {
+    /*
+
+    // This part is commented out because it becomes impractical for large matrices.
+    // Also, it takes additional computation time.
+
+    // Print the result to check its accuracy.
+    for (i = 0; i < ROWS; i++) {
+        for (int j = 0; j < COLUMNS; j++) {
+            // Print the matrix element.
             printf("%d ", matrix3[i][j]);
         }
-        
+        // Go to the next line for the next row.
         printf("\n");
     }
+    */
 
-    
     printf("Serial duration: %3.6fms\n", milliseconds);
 }
 
