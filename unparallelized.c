@@ -61,11 +61,10 @@ int main() {
     for (trial = 0; trial < TRIALS; trial++) {
         for (int i = 0; i < ROWS; i++) {
             for (int j = 0; j < COLUMNS; j++) {
-                for(int x = 0; x < COLUMNS; x++)
-                {
+                for(int x = 0; x < COLUMNS; x++) {
                     // Compute the result.
                     // Store the result in matrix3.
-                    matrix3[i][j] += matrix1[i][x]*matrix2[x][j];
+                    matrix3[i][j] += matrix1[i][x] * matrix2[x][j];
                 }
             }
         }
@@ -73,7 +72,7 @@ int main() {
 
     clock_gettime(CLOCK_REALTIME, &stop);
 
-    // record execution time as the difference of event timestamps
+    // Record execution time as the difference of event timestamps.
     double milliseconds = (stop.tv_sec - start.tv_sec) * 1e3 +
     (stop.tv_nsec - start.tv_nsec) / 1e6;
 
