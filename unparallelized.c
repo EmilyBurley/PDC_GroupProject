@@ -12,15 +12,15 @@
 const int TRIALS = 1;
 
 // The number of rows in matrix1.
-const int M1_ROWS = 10;
+const int M1_ROWS = 1000;
 
 // The number of columns in matrix1, and the number of rows in
 // matrix2. By the constraints of matrix multiplication, this
 // number must be the same.
-const int M1_COLUMNS_M2_ROWS = 10;
+const int M1_COLUMNS_M2_ROWS = 1000;
 
 // The number of columns in matrix2.
-const int M2_COLUMNS = 10;
+const int M2_COLUMNS = 1000;
 
 // The number of rows in matrix3, which is equals the number of
 // rows in matrix1.
@@ -107,7 +107,7 @@ int main() {
     // Record execution time as the difference of event timestamps.
     double milliseconds = (stop.tv_sec - start.tv_sec) * 1e3 +
     (stop.tv_nsec - start.tv_nsec) / 1e6;
-    
+    /*
     // Print the result to check its accuracy.
     for (int i = 0; i < M3_ROWS; i++) {
         for (int j = 0; j < M3_COLUMNS; j++) {
@@ -117,6 +117,7 @@ int main() {
         // Go to the next line for the next row.
         printf("\n");
     }
+    */
 
     // Measure the performance by printing the duration.
     printf("Serial/unparallelized program duration: %3.6fms\n", milliseconds);

@@ -17,11 +17,11 @@ __global__ void matrixMulGlobalKernel(int* pfMatrixA, int* pfMatrixB, int* pfMat
 
 int main() {
     // Number of rows in Matrix 1 and Matrix 3.
-    const int M = 10;
+    const int M = 1000;
     // Number of columns in Matrix 2 and Matrix 3.
-    const int N = 10;
+    const int N = 1000;
     // Number of columns in Matrix 1 and rows in Matrix 2.
-    const int K = 10;
+    const int K = 1000;
 
     int* h_A = (int*)malloc(M * K * sizeof(int));
     int* h_B = (int*)malloc(K * N * sizeof(int));
@@ -62,6 +62,7 @@ int main() {
 
     cudaMemcpy(h_C, d_C, M * N * sizeof(int), cudaMemcpyDeviceToHost);
 
+    /*
     printf("Result Matrix:\n");
     for (int i = 0; i < M; i++) {
         for (int j = 0; j < N; j++) {
@@ -69,6 +70,7 @@ int main() {
         }
         printf("\n");
     }
+    */
 
     printf("Global Memory Kernel Elapsed Time: %f milliseconds\n", milliseconds);
 
