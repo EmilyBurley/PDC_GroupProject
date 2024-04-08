@@ -19,8 +19,9 @@ const int TRIALS = 1;
 const int ROWS = 100;
 const int COLUMNS = 100;
 
-
+// Choose a number to fill the first matrix.
 const int MATRIX_1_NUMBER = 7;
+// Choose a number to fill the second matrix.
 const int MATRIX_2_NUMBER = 8;
 
 int main() {
