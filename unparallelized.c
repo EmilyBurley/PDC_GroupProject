@@ -107,10 +107,7 @@ int main() {
     // Record execution time as the difference of event timestamps.
     double milliseconds = (stop.tv_sec - start.tv_sec) * 1e3 +
     (stop.tv_nsec - start.tv_nsec) / 1e6;
-
-
-    // This part is commented out because it becomes impractical for large matrices.
-    /*
+    
     // Print the result to check its accuracy.
     for (int i = 0; i < M3_ROWS; i++) {
         for (int j = 0; j < M3_COLUMNS; j++) {
@@ -120,7 +117,6 @@ int main() {
         // Go to the next line for the next row.
         printf("\n");
     }
-    */
 
     // Measure the performance by printing the duration.
     printf("Serial/unparallelized program duration: %3.6fms\n", milliseconds);
