@@ -20,3 +20,9 @@ Both files perform matrix multiplication. The file "unparallelized.c" performs u
 ### Server
 
 We used the Yoko server.
+
+### Usage about parallelized.cu
+
+- nano parallelized.cu
+- nvcc -arch=sm_37 parallelized.cu -o parallelized
+- ./parallelized
