@@ -7,6 +7,9 @@
 #include <time.h>
 
 const int TRIALS = 1;
+
+// Instead of using N for the size of the arrays, we used
+// the constants ROWS and COLUMNS, below.
 //const int N = 100;
 
 const int ROWS = 100;
