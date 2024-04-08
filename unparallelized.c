@@ -91,6 +91,7 @@ int main() {
     }
     */
 
+    // Measure the performance by printing the duration.
     printf("Serial duration: %3.6fms\n", milliseconds);
 }
 
