@@ -19,8 +19,9 @@ const int TRIALS = 1;
 const int ROWS = 100;
 const int COLUMNS = 100;
 
-const int MATRIX_1_NUMBER;
-const int MATRIX_2_NUMBER;
+
+const int MATRIX_1_NUMBER = 7;
+const int MATRIX_2_NUMBER = 8;
 
 int main() {
 
@@ -54,14 +55,14 @@ int main() {
         matrix3[i] = (int *)malloc(COLUMNS * sizeof(int));
     }
 
-    // Fill matrix1 with the number 7.
+    // Fill matrix1 with an integer.
     for (int i = 0; i < ROWS; i++) {
         for (int j = 0; j < COLUMNS; j++) {
             matrix1[i][j] = MATRIX_1_NUMBER;
         }
     }
 
-    // Fill matrix2 with the number 8.
+    // Fill matrix2 with an integer.
     for (int i = 0; i < ROWS; i++) {
         for (int j = 0; j < COLUMNS; j++) {
             matrix2[i][j] = MATRIX_2_NUMBER;
