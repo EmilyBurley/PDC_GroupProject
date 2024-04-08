@@ -12,15 +12,15 @@
 const int TRIALS = 1;
 
 // The number of rows in matrix1.
-const int M1_ROWS = 3;
+const int M1_ROWS = 10;
 
 // The number of columns in matrix1, and the number of rows in
 // matrix2. By the constraints of matrix multiplication, this
 // number must be the same.
-const int M1_COLUMNS_M2_ROWS = 4;
+const int M1_COLUMNS_M2_ROWS = 10;
 
 // The number of columns in matrix2.
-const int M2_COLUMNS = 5;
+const int M2_COLUMNS = 10;
 
 // The number of rows in matrix3, which is equals the number of
 // rows in matrix1.

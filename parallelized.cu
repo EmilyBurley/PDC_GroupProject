@@ -16,8 +16,11 @@ __global__ void matrixMulGlobalKernel(int* pfMatrixA, int* pfMatrixB, int* pfMat
 }
 
 int main() {
+    // Number of rows in Matrix 1 and Matrix 3.
     const int M = 3;
+    // Number of columns in Matrix 2 and Matrix 3.
     const int N = 3;
+    // Number of columns in Matrix 1 and rows in Matrix 2.
     const int K = 3;
 
     int* h_A = (int*)malloc(M * K * sizeof(int));
