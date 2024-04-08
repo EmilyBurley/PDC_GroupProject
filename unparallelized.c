@@ -62,13 +62,11 @@ int main() {
         for (int i = 0; i < ROWS; i++) {
             for (int j = 0; j < COLUMNS; j++) {
                 // Code the computation here.
-                matrix3[i][j]=0;
                 for(int x = 0; x < COLUMNS; x++)
                 {
                     // Store the result in matrix3.
                     matrix3[i][j] += matrix1[i][x]*matrix2[x][j];
                 }
-                
             }
         }
     };
@@ -80,7 +78,6 @@ int main() {
     (stop.tv_nsec - start.tv_nsec) / 1e6;
 
     /*
-
     // This part is commented out because it becomes impractical for large matrices.
     // Also, it takes additional computation time.
 
