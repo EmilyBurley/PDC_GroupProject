@@ -7,21 +7,27 @@
 #include <stdio.h>
 #include <time.h>
 
-// The number of times you'd like to multiply
-// the matrices together.
+// The number of times you'd like to multiply the two matrices
+// together and add the result to matrix3.
 const int TRIALS = 1;
 
-// Instead of using N for the size of the arrays, we used
-// the constants ROWS and COLUMNS, below.
-//const int N = 100;
-
-// The number of rows and columns in the matrices.
+// The number of rows in matrix1.
 const int M1_ROWS = 3;
-// The number of columns in matrix1 and the number of
-// rows in matrix2 must be the same.
+
+// The number of columns in matrix1, and the number of rows in
+// matrix2. By the constraints of matrix multiplication, this
+// number must be the same.
 const int M1_COLUMNS_M2_ROWS = 4;
+
+// The number of columns in matrix2.
 const int M2_COLUMNS = 5;
+
+// The number of rows in matrix3, which is equals the number of
+// rows in matrix1.
 const int M3_ROWS = M1_ROWS;
+
+// The number of columns in matrix3, which is equals the number of
+// columns in matrix2.
 const int M3_COLUMNS = M2_COLUMNS;
 
 // Choose a number to fill the first matrix.
