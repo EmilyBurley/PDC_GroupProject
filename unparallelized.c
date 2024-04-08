@@ -78,17 +78,17 @@ int main() {
     // Record the time the computation started.
     clock_gettime(CLOCK_REALTIME, &start);
 
-    // Perform matrix multiplication.
+    // Perform the computation of matrix multiplication.
     // For each trial...
     for (int trial = 0; trial < TRIALS; trial++) {
         // ... and for each row of matrix3...
         for (int row = 0; row < M3_ROWS; row++) {
             // ... and for each column of matrix3...
             for (int column = 0; column < M3_COLUMNS; column++) {
-                // ... iterate through matrix1's row and matrix2's column.
+                // ... iterate through matrix1's row and matrix2's column...
                 for(int x = 0; x < M1_COLUMNS_M2_ROWS; x++) {
-                    // Compute the result.
-                    // Store the result in matrix3.
+                    // ... multiplying that element of each matrix together...
+                    // ... and adding the result to the current location in matrix3.
                     matrix3[row][column] += matrix1[row][x] * matrix2[x][column];
                 }
             }
@@ -104,7 +104,7 @@ int main() {
 
 
     // This part is commented out because it becomes impractical for large matrices.
-
+    /*
     // Print the result to check its accuracy.
     for (int i = 0; i < M3_ROWS; i++) {
         for (int j = 0; j < M3_COLUMNS; j++) {
@@ -114,7 +114,7 @@ int main() {
         // Go to the next line for the next row.
         printf("\n");
     }
-
+    */
 
     // Measure the performance by printing the duration.
     printf("Serial duration: %3.6fms\n", milliseconds);
