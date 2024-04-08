@@ -52,5 +52,9 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
+# The executable file name
+unparallelized
+parallelized
+
 # .DS_Store, or Desktop Services Store, is a file in the Apple macOS operating system that stores custom attributes for a folder
 .DS_Store
