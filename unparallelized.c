@@ -26,7 +26,7 @@ const int MATRIX_2_NUMBER = 8;
 
 int main() {
 
-    int trial, i;
+    int trial;
 
     // These will be used to quantify the amount of time
     // the program took to run.
@@ -97,7 +97,7 @@ int main() {
     // This part is commented out because it becomes impractical for large matrices.
 
     // Print the result to check its accuracy.
-    for (i = 0; i < ROWS; i++) {
+    for (int i = 0; i < ROWS; i++) {
         for (int j = 0; j < COLUMNS; j++) {
             // Print the matrix element.
             printf("%d ", matrix3[i][j]);
