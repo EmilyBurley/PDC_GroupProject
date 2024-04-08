@@ -92,10 +92,10 @@ int main() {
             // ... and for each column within that row...
             for (int column = 0; column < M3_COLUMNS; column++) {
                 // ... iterate through matrix1's row and matrix2's column...
-                for(int x = 0; x < M1_COLUMNS_M2_ROWS; x++) {
+                for(int currentLocation = 0; currentLocation < M1_COLUMNS_M2_ROWS; currentLocation++) {
                     // ... multiplying that element of each matrix together...
                     // ... and adding the result to the current location in matrix3.
-                    matrix3[row][column] += matrix1[row][x] * matrix2[x][column];
+                    matrix3[row][column] += matrix1[row][currentLocation] * matrix2[currentLocation][column];
                 }
             }
         }
