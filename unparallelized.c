@@ -2,16 +2,20 @@
 
 // Start our program.
 
+// Include the necessary libraries.
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
 
+// The number of times you'd like to multiply
+// the matrices together.
 const int TRIALS = 1;
 
 // Instead of using N for the size of the arrays, we used
 // the constants ROWS and COLUMNS, below.
 //const int N = 100;
 
+// The number of rows and columns in the matrices.
 const int ROWS = 100;
 const int COLUMNS = 100;
 
