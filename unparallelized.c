@@ -16,8 +16,13 @@ const int TRIALS = 1;
 //const int N = 100;
 
 // The number of rows and columns in the matrices.
-const int ROWS = 500;
-const int COLUMNS = 500;
+const int M1_ROWS = 3;
+// The number of columns in matrix1 and the number of
+// rows in matrix2 must be the same.
+const int M1_COLUMNS_M2_ROWS = 4;
+const int M2_COLUMNS = 5;
+const int M3_ROWS = M1_ROWS;
+const int M3_COLUMNS = M2_COLUMNS;
 
 // Choose a number to fill the first matrix.
 const int MATRIX_1_NUMBER = 7;
@@ -34,36 +39,38 @@ int main() {
     int **matrix1, **matrix2, **matrix3;
 
     // Allocate and initialize rows memory.
-    matrix1 = (int**)malloc(ROWS * sizeof(int*));
+    matrix1 = (int**)malloc(M1_ROWS * sizeof(int*));
     // Put an array in each row.
-    for (int i = 0; i < ROWS; i++) {
-        matrix1[i] = (int *)malloc(COLUMNS * sizeof(int));
+    for (int i = 0; i < M1_ROWS; i++) {
+        matrix1[i] = (int *)malloc(M1_COLUMNS_M2_ROWS * sizeof(int));
     }
 
     // Allocate and initialize rows memory.
-    matrix2 = (int**)malloc(ROWS * sizeof(int*));
+    matrix2 = (int**)malloc(M1_COLUMNS_M2_ROWS * sizeof(int*));
     // Put an array in each row.
-    for (int i = 0; i < ROWS; i++) {
-        matrix2[i] = (int *)malloc(COLUMNS * sizeof(int));
+    for (int i = 0; i < M1_COLUMNS_M2_ROWS; i++) {
+        matrix2[i] = (int *)malloc(M2_COLUMNS * sizeof(int));
     }
 
     // Allocate and initialize rows memory.
-    matrix3 = (int**)malloc(ROWS * sizeof(int*));
+    matrix3 = (int**)malloc(M3_ROWS * sizeof(int*));
     // Put an array in each row.
-    for (int i = 0; i < ROWS; i++) {
-        matrix3[i] = (int *)malloc(COLUMNS * sizeof(int));
+    for (int i = 0; i < M3_ROWS; i++) {
+        matrix3[i] = (int *)malloc(M3_COLUMNS * sizeof(int));
     }
 
     // Fill matrix1 with an integer.
-    for (int i = 0; i < ROWS; i++) {
-        for (int j = 0; j < COLUMNS; j++) {
+    for (int i = 0; i < M1_ROWS; i++) {
+        for (int j = 0; j < M1_COLUMNS_M2_ROWS; j++) {
             matrix1[i][j] = MATRIX_1_NUMBER;
         }
     }
 
     // Fill matrix2 with an integer.
-    for (int i = 0; i < ROWS; i++) {
-        for (int j = 0; j < COLUMNS; j++) {
+    // For each row...
+    for (int i = 0; i < M1_COLUMNS_M2_ROWS; i++) {
+        // ... fill each element in that row.
+        for (int j = 0; j < M2_COLUMNS; j++) {
             matrix2[i][j] = MATRIX_2_NUMBER;
         }
     }
@@ -72,10 +79,11 @@ int main() {
     clock_gettime(CLOCK_REALTIME, &start);
 
     // Perform matrix multiplication.
+    // For each trial...
     for (int trial = 0; trial < TRIALS; trial++) {
-        for (int i = 0; i < ROWS; i++) {
-            for (int j = 0; j < COLUMNS; j++) {
-                for(int x = 0; x < COLUMNS; x++) {
+        for (int i = 0; i < M3_ROWS; i++) {
+            for (int j = 0; j < M3_COLUMNS; j++) {
+                for(int x = 0; x < M1_COLUMNS_M2_ROWS; x++) {
                     // Compute the result.
                     // Store the result in matrix3.
                     matrix3[i][j] += matrix1[i][x] * matrix2[x][j];
@@ -91,19 +99,19 @@ int main() {
     double milliseconds = (stop.tv_sec - start.tv_sec) * 1e3 +
     (stop.tv_nsec - start.tv_nsec) / 1e6;
 
-    /*
+
     // This part is commented out because it becomes impractical for large matrices.
 
     // Print the result to check its accuracy.
-    for (int i = 0; i < ROWS; i++) {
-        for (int j = 0; j < COLUMNS; j++) {
+    for (int i = 0; i < M3_ROWS; i++) {
+        for (int j = 0; j < M3_COLUMNS; j++) {
             // Print the matrix element.
             printf("%d ", matrix3[i][j]);
         }
         // Go to the next line for the next row.
         printf("\n");
     }
-    */
+
 
     // Measure the performance by printing the duration.
     printf("Serial duration: %3.6fms\n", milliseconds);
