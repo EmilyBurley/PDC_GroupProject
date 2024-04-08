@@ -82,14 +82,14 @@ int main() {
     // For each trial...
     for (int trial = 0; trial < TRIALS; trial++) {
         // ... and for each row of matrix3...
-        for (int i = 0; i < M3_ROWS; i++) {
+        for (int row = 0; row < M3_ROWS; row++) {
             // ... and for each column of matrix3...
-            for (int j = 0; j < M3_COLUMNS; j++) {
+            for (int column = 0; column < M3_COLUMNS; column++) {
                 // ... iterate through matrix1's row and matrix2's column.
                 for(int x = 0; x < M1_COLUMNS_M2_ROWS; x++) {
                     // Compute the result.
                     // Store the result in matrix3.
-                    matrix3[i][j] += matrix1[i][x] * matrix2[x][j];
+                    matrix3[row][column] += matrix1[row][x] * matrix2[x][column];
                 }
             }
         }
