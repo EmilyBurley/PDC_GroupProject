@@ -61,9 +61,9 @@ int main() {
     for (trial = 0; trial < TRIALS; trial++) {
         for (int i = 0; i < ROWS; i++) {
             for (int j = 0; j < COLUMNS; j++) {
-                // Code the computation here.
                 for(int x = 0; x < COLUMNS; x++)
                 {
+                    // Compute the result.
                     // Store the result in matrix3.
                     matrix3[i][j] += matrix1[i][x]*matrix2[x][j];
                 }
