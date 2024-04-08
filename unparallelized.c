@@ -26,8 +26,6 @@ const int MATRIX_2_NUMBER = 8;
 
 int main() {
 
-    int trial;
-
     // These will be used to quantify the amount of time
     // the program took to run.
     struct timespec start, stop;
@@ -74,7 +72,7 @@ int main() {
     clock_gettime(CLOCK_REALTIME, &start);
 
     // Perform matrix multiplication.
-    for (trial = 0; trial < TRIALS; trial++) {
+    for (int trial = 0; trial < TRIALS; trial++) {
         for (int i = 0; i < ROWS; i++) {
             for (int j = 0; j < COLUMNS; j++) {
                 for(int x = 0; x < COLUMNS; x++) {
