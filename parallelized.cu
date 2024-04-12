@@ -54,7 +54,7 @@ int main() {
     cudaMemcpy(d_B, h_B, K * N * sizeof(int), cudaMemcpyHostToDevice);
 
     // Define block size and grid size
-    dim3 blockDim(16, 16);
+    dim3 blockDim(3, 3);//we need change block size (9, 9) ,(81, 81), (243, 243);
     dim3 gridDim((N + blockDim.x - 1) / blockDim.x, (M + blockDim.y - 1) / blockDim.y);
 
     // Create CUDA event
