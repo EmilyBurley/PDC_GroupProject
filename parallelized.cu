@@ -23,9 +23,9 @@ __global__ void matrixMulGlobalKernel(int* MatrixA, int* MatrixB, int* MatrixC, 
 }
 
 int main() {
-    const int M = 3;
-    const int N = 3;
-    const int K = 3;
+    const int M = 3;//Number of rows of output MatrixC
+    const int N = 3;//Number of cols of output MatrixC
+    const int K = 3;//intermediate dimension = matrix A col = matrix B row
 
     //Allocate the matrix on the host;
     int* h_A = (int*)malloc(M * K * sizeof(int));
