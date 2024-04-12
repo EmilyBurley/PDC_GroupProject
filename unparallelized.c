@@ -26,8 +26,8 @@ const int M2_COLUMNS = 1000;
 // rows in matrix1.
 const int M3_ROWS = M1_ROWS;
 
-// The number of columns in matrix3, which is equals the number of
-// columns in matrix2.
+// The number of columns in matrix3, which is equals the number
+// of columns in matrix2.
 const int M3_COLUMNS = M2_COLUMNS;
 
 // Choose a number to fill the first matrix.
