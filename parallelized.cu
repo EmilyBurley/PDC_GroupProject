@@ -1,17 +1,24 @@
 #include <stdio.h>
 #include <cuda_runtime.h>
 
+// This is Kernel function that uses the GPU to perform matrix multiplication
 __global__ void matrixMulGlobalKernel(int* MatrixA, int* MatrixB, int* MatrixC, int m, int n, int k) {
+    // calc the row index of the output matrix element allocated by the current thread
     int nRow = blockIdx.y * blockDim.y + threadIdx.y;
+    // Calc the column index of the output matrix element allocated by the current thread
     int nCol = blockIdx.x * blockDim.x + threadIdx.x;
-    int fCVal = 0;
+    //Init the accumulator variable of the current output element
+    int accumulator = 0;
 
+    //we need to make sure current thread is within the valid range of the output matrix
     if (nRow < m && nCol < n) {
+        // Traverse corresponding MatrixA and MatrixB, and calculate the dot product
         for (int i = 0; i < k; i++) {
-            fCVal += MatrixA[nRow * k + i] * MatrixB[i * n + nCol];
+            // Accumulate the product of the corresponding elements of MatrixA and MatrixB
+            accumulator += MatrixA[nRow * k + i] * MatrixB[i * n + nCol];
         }
-
-        MatrixC[nRow * n + nCol] = fCVal;
+        // Store the calc results in the corresponding elements of the output MatrixC
+        MatrixC[nRow * n + nCol] = accumulator;
     }
 }
 
@@ -51,7 +58,8 @@ int main() {
     dim3 gridDim((N + blockDim.x - 1) / blockDim.x, (M + blockDim.y - 1) / blockDim.y);
 
     // Create CUDA event
-    cudaEvent_t start, stop;
+    cudaEvent_t start;
+    cudaEvent_t stop;
     cudaEventCreate(&start);
     cudaEventCreate(&stop);
 
